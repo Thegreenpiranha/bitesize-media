@@ -4,7 +4,7 @@
 
 Turn your Nostr audience into recurring revenue through Lightning-powered premium relays.
 
-**Live at:** https://bitesize-media.com
+**Live at:** https://bitesize-media.com //needs updating for pivot
 
 ---
 
@@ -141,43 +141,6 @@ Day 30: Access expires if not renewed
 │  - Creator always has write access   │
 └──────────────────────────────────────┘
 ```
-
----
-
-## Revenue Model
-
-### Platform Fee: 2.1%
-
-**Why 2.1%?**  
-Like 21 million bitcoin - it's a principle, not profit optimization.
-
-**Industry Comparison:**
-- Patreon: 5-12%
-- YouTube: 30-45%  
-- OnlyFans: 20%
-- Substack: 10%
-- **Bitesize Media: 2.1%** ⚡
-
-### Example Economics
-
-**Creator with 50,000 followers:**
-```
-Conservative (0.5% conversion):
-- 250 subscribers × 10k sats/month = 2.5M sats ≈ $2,275/month
-- Creator keeps: $2,227/month (97.9%)
-- Platform: $48/month (2.1%)
-
-Realistic (1% conversion):
-- 500 subscribers × 10k sats/month = 5M sats ≈ $4,550/month  
-- Creator keeps: $4,454/month
-- Platform: $96/month
-
-Strong (2% conversion):
-- 1,000 subscribers × 10k sats/month = 10M sats ≈ $9,100/month
-- Creator keeps: $8,909/month
-- Platform: $191/month
-```
-
 ---
 
 ## Installation
@@ -193,7 +156,7 @@ Lightning node (for testing)
 ### Quick Start
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/bitesize-media
+git clone https://github.com/Thegreenpiranha/bitesize-media
 cd bitesize-media
 
 # Install dependencies
@@ -225,88 +188,12 @@ MONITORED_RELAYS=wss://relay.damus.io,wss://nos.lol,wss://relay.nostr.band
 
 ---
 
-## Roadmap
-
-### ✅ Phase 0: Foundation (Week 1)
-- [x] Project setup and documentation
-- [ ] Deploy strfry relay with NIP-42 auth
-- [ ] PostgreSQL schema (subscriptions, whitelist)
-- [ ] Basic payment detection (zap monitoring)
-
-### 🚧 Phase 1: MVP (Week 2-3)
-- [ ] Automated whitelist management
-- [ ] Encrypted DM delivery (onboarding instructions)
-- [ ] Renewal reminder system (Day 25 notifications)
-- [ ] Manual creator dashboard (revenue, active subs)
-
-### 📋 Phase 2: Launch (Week 4)
-- [ ] Deploy to production VPS
-- [ ] SSL/domain configuration
-- [ ] Onboard first creator (53k followers)
-- [ ] Soft launch with 10-20 test subscribers
-
-### 🎯 Phase 3: Scale (Month 2-3)
-- [ ] Multi-creator support
-- [ ] Automated onboarding flow
-- [ ] Analytics dashboard
-- [ ] Public marketplace/discovery
-
-### 🚀 Phase 4: Expand (Month 4-6)
-- [ ] Tiered subscriptions (basic/premium/VIP)
-- [ ] Bundle subscriptions (multiple creators)
-- [ ] Mobile-optimized ticket viewer
-- [ ] Creator referral program
-
----
-
-## Success Metrics
-
-### 30-Day Targets (First Creator)
-- **Subscribers:** 50+ (0.1% conversion from 53k followers)
-- **Revenue:** $455+/month for creator
-- **Churn:** <20% monthly
-- **Platform revenue:** $9.50+/month (covers infrastructure)
-
-### 90-Day Targets  
-- **Subscribers:** 200+ (0.4% conversion)
-- **Revenue:** $1,820+/month for creator  
-- **Churn:** <15% monthly
-- **New creators:** 3-5 in pipeline
-
-### 6-Month Vision
-- **Creators:** 10-20 active
-- **Total volume:** $50k+/month
-- **Platform MRR:** $1,000+
-- **Proven model, ready to scale**
-
----
-
-## Infrastructure Costs
-
-### Monthly Operating Expenses
-```
-VPS (Hetzner CPX21): $6/month
-- 3 vCPU, 4GB RAM, 80GB SSD
-- Relay + backend + database
-
-Domain: $1/month  
-- bitesize-media.com + SSL (Let's Encrypt)
-
-Total: $7/month
-```
-
-**Break-even:** 1 creator with 50+ subscribers
-
-**At scale (50 creators):** $7/month infrastructure, $2,500+/month revenue
-
----
-
 ## Contributing
 
 Currently in private beta. Open to contributions after public launch.
 
 **Interested in early access?**
-- Creators: Apply at https://bitesize-media.com/creators 
+- Creators: Apply at https://bitesize-media.com/creators // to be built
 - Developers: Email sean@bitesize-media.com
 
 ---
@@ -329,7 +216,7 @@ MIT License - see [LICENSE](LICENSE) for details
 
 ## Contact
 
-- **Website:** https://bitesize-media.com
+- **Website:** https://bitesize-media.com //needs updating for the pivot
 - **Nostr:** npub19aw7qqpahp8v64zfz2p4p3nv07mra8gzkfgdsjhcfarrutumemcstpfsmu
 - **Email:** hello@bitesize-media.com
 - **GitHub:** https://github.com/Thegreenpiranha/bitesize-media
