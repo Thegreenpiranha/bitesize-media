@@ -1,0 +1,21 @@
+# Dependencies 
+node_modules/
+package-lock.json
+# Environment variables
+.env
+# TypeScript
+dist/
+*.tsbuildinfo
+# Logs
+logs/
+*.log
+# IDE
+.vscode/
+.idea/
+# OS
+.DS_Store
+Thumbs.db
+# Testing 
+coverage/
+# Build 
+build/
