@@ -1,25 +1,32 @@
 import dotenv from 'dotenv';
 
-//Load environment variables
-dotenv.config
+// Load environment variables
+const result = dotenv.config();
 
-console.log('Bitesize Media - Starting...');
-console.log('Creator: ${process.env.CREATOR_PUBKEY}');
-console.log(`⚡ Subscription Price: ${process.env.SUBSCRIPTION_PRICE_SATS} sats`);
-console.log(`Platform Fee: ${process.env.PLATFORM_FEE_PERCENT}%`);
+if (result.error) {
+  console.error('Error loading .env file:', result.error);
+} else {
+  console.log('✅ .env file loaded successfully');
+}
+
+console.log('🚀 Bitesize Media - Starting...');
+console.log('📡 Creator:', process.env.CREATOR_PUBKEY);
+console.log('⚡ Subscription Price:', process.env.SUBSCRIPTION_PRICE_SATS, 'sats');
+console.log('💰 Platform Fee:', process.env.PLATFORM_FEE_PERCENT + '%');
 
 async function main() {
-    try {
-        console.log( 'Bitesize Media initialised');
-
-        //TODO: Start services
-        // - Payment detector
-        // - Subscription manager
-        // - Relay manager
-
-    } catch (error) {
-        console.error('Error starting Bitesize Media:', error);
-    }
+  try {
+    console.log('✅ Bitesize Media initialized');
+    
+    // TODO: Start services
+    // - Payment detector
+    // - Subscription manager
+    // - Relay manager
+    
+  } catch (error) {
+    console.error('❌ Error starting Bitesize Media:', error);
+    process.exit(1);
+  }
 }
 
 main();
