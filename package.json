@@ -20,19 +20,19 @@
   "author": "Thegreenpiranha",
   "license": "MIT",
   "dependencies": {
-    "nostr-tools": "^2.7.2",
-    "light-bolt11-decoder": "^3.1.0",
-    "pg": "^8.11.3",
-    "dotenv": "^16.3.1",
     "bullmq": "^5.1.0",
+    "dotenv": "^16.3.1",
     "ioredis": "^5.3.2",
+    "light-bolt11-decoder": "^3.1.0",
+    "nostr-tools": "^2.18.2",
+    "pg": "^8.11.3",
     "ws": "^8.16.0"
   },
   "devDependencies": {
-    "typescript": "^5.3.3",
     "@types/node": "^20.10.6",
     "@types/pg": "^8.10.9",
     "nodemon": "^3.0.2",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   }
 }
