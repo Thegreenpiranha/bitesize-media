@@ -1,5 +1,6 @@
 import { SimplePool, Event } from 'nostr-tools';
 import dotenv from 'dotenv';
+import { SubscriptionManager } from './subscription-manager';
 
 dotenv.config();
 
@@ -9,9 +10,11 @@ const SUBSCRIPTION_PRICE_SATS = parseInt(process.env.SUBSCRIPTION_PRICE_SATS || 
 
 export class PaymentDetector {
   private pool: SimplePool;
+  private subscriptionManager: SubscriptionManager;
 
   constructor() {
     this.pool = new SimplePool();
+    this.subscriptionManager = new SubscriptionManager();
     console.log('Payment Detector initialized');
     console.log(`Watching creator: ${CREATOR_PUBKEY}`);
     console.log(`Monitoring ${MONITORED_RELAYS.length} relays`);
@@ -75,19 +78,32 @@ export class PaymentDetector {
     return 10000;
   }
 
-  private processSubscription(pubkey: string, amount: number, zapEventId: string) {
+  private async processSubscription(pubkey: string, amount: number, zapEventId: string) {
     console.log('\nPROCESSING SUBSCRIPTION:');
     console.log(`  Subscriber: ${pubkey.slice(0, 8)}...`);
     console.log(`  Amount: ${amount} sats`);
     console.log(`  Zap ID: ${zapEventId.slice(0, 8)}...`);
     
-    // TODO: 
-    // 1. Add to database
-    // 2. Add to relay whitelist
-    // 3. Send encrypted DM with instructions
-    // 4. Schedule renewal reminder
+    try {
+      // 1. Store subscription in database
+      await this.subscriptionManager.createSubscription(
+        pubkey,
+        CREATOR_PUBKEY,
+        amount,
+        zapEventId
+      );
 
-    console.log('Subscription processed (TODO: implement database + whitelist)\n');
+      // 2. Add to relay whitelist
+      const relayUrl = process.env.RELAY_URL || 'wss://relay.bitesize-media.com';
+      await this.subscriptionManager.addToRelayWhitelist(pubkey, relayUrl);
+
+      // TODO: 3. Send encrypted DM with instructions
+      // TODO: 4. Schedule renewal reminder
+
+      console.log('Subscription processed successfully\n');
+    } catch (error) {
+      console.error('Error processing subscription:', error);
+    }
   }
 
   stop() {
